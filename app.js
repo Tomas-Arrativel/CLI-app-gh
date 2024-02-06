@@ -1,8 +1,18 @@
 const express = require('express');
 const app = express();
+const axios = require('axios').default;
+
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.send('Home page');
+  axios
+    .get('https://zenquotes.io/api/today')
+    .then(({ data }) => {
+      res.render('template', { qod: data[0].h });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 const port = 5000;
