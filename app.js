@@ -3,6 +3,7 @@ const app = express();
 const axios = require('axios').default;
 
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 // Home page and quote of the day
 app.get('/', (req, res) => {
