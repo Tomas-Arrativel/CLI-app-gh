@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   axios
     .get('https://zenquotes.io/api/today')
     .then(({ data }) => {
-      res.render('template', { qod: data[0].h });
+      res.render('home', { qod: data[0].h });
     })
     .catch((err) => {
       console.log(err);
