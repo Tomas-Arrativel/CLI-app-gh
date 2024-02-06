@@ -7,12 +7,17 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
   axios
     .get('https://zenquotes.io/api/today')
-    .then(({ data }) => {
-      res.render('home', { qod: data[0].h });
-    })
+    .then(({ data }) => res.render('home', { qod: data[0].h }))
     .catch((err) => {
       console.log(err);
     });
+});
+
+app.get('/random', (req, res) => {
+  axios
+    .get('https://zenquotes.io/api/random')
+    .then(({ data }) => res.render('random', { random: data[0].h }))
+    .catch((err) => console.log(err));
 });
 
 const port = 5000;
