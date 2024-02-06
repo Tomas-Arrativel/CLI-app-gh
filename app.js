@@ -4,6 +4,7 @@ const axios = require('axios').default;
 
 app.set('view engine', 'ejs');
 
+// Home page and quote of the day
 app.get('/', (req, res) => {
   axios
     .get('https://zenquotes.io/api/today')
@@ -13,10 +14,19 @@ app.get('/', (req, res) => {
     });
 });
 
+// Random quote
 app.get('/random', (req, res) => {
   axios
     .get('https://zenquotes.io/api/random')
     .then(({ data }) => res.render('random', { random: data[0].h }))
+    .catch((err) => console.log(err));
+});
+
+// List of about 50 quotes
+app.get('/list', (req, res) => {
+  axios
+    .get('https://zenquotes.io/api/quotes')
+    .then(({ data }) => res.render('list', { list: data }))
     .catch((err) => console.log(err));
 });
 
