@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Styles for Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.link {
+  color: #059408;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.link:hover {
+  color: #25ad27;
+  text-decoration: underline;
+}
+
+/* Styles for the main container */
+main {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Styles for the title */
+.title {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+/* Styles for the quotes */
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 700px;
+}
+.quote blockquote {
+  font-size: 1.3rem;
+}
+
+.quote blockquote footer {
+  font-size: 1rem;
+}
