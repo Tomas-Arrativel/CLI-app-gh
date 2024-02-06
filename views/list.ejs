@@ -9,8 +9,10 @@
   <body>
     <%- include('header') -%>
     <main>
-      <h1 class="title">This is a random Quote:</h1>
-      <div class="quote"> <%- random %> </div>
+      <h1 class="title">This is a List of Quotes:</h1>
+      <div class="quote"
+        ><% list.map((quote) => { %> <%- quote.h %> <% }) %>
+      </div>
     </main>
   </body>
 </html>
